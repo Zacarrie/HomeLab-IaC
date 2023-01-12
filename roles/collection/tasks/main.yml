@@ -1,7 +1,3 @@
 - name: Install Collection Requirements
-  apt:
-    name:
-      - ansible.utils
-      - community.general
-      - ansible.postix
-      - kubernetes.core
+  cmd:
+    command: ansible-galaxy collection install -r ./collections/requirements.yml
