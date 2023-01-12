@@ -14,3 +14,8 @@ Install ansible
 ```
 sudo apt install ansible
 ```
+
+Pull Ansible command
+```
+ansible-pull -U https://github.com/Zacarrie/HomeLab-IaC.git
+```
