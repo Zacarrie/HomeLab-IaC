@@ -3,6 +3,8 @@
   connection: local
   become: true
   roles:
+    - role: collection
+      tags: [master, node]
     - role: prereq
       tags: [master, node]
     - role: download

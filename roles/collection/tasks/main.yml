@@ -1,0 +1,7 @@
+- name: Install Collection Requirements
+  apt:
+    name:
+      - ansible.utils
+      - community.general
+      - ansible.postix
+      - kubernetes.core
