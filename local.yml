@@ -1,8 +1,19 @@
 - hosts: localhost
+  gather_facts: yes
   connection: local
   become: true
- 
-  tasks:
-  - name: install htop
-    package:
-      name: htop
+  roles:
+    - role: prereq
+      tags: [master, node]
+    - role: download
+      tags: [master, node]
+    - role: raspberrypi
+      tags: [master, node]
+    - role: k3s/master
+      tags: [master]
+    - role: k3s/node
+      tags: [node]
+    - role: k3s/post
+      tags: [master]
+
+    
