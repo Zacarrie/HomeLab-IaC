@@ -6,8 +6,7 @@
     owner: root
     group: root
     mode: 0644
-  when: ansible_hostname == hostvars[groups['master'][0]]['ansible_hostname']
-
+    
 - name: Copy vip rbac manifest to first master
   template:
     src: "vip.rbac.yaml.j2"
@@ -15,7 +14,6 @@
     owner: root
     group: root
     mode: 0644
-  when: ansible_hostname == hostvars[groups['master'][0]]['ansible_hostname']
 
 - name: Copy vip manifest to first master
   template:
@@ -24,4 +22,3 @@
     owner: root
     group: root
     mode: 0644
-  when: ansible_hostname == hostvars[groups['master'][0]]['ansible_hostname']
