@@ -2,7 +2,7 @@
 I used this script that I found to make an autoinstall iso that sets up my VM's for my cluster.
 Before starting I recommend downloading the ubuntu-20.04.05-live-server-amd64.iso yourself from a local mirror.
 1. Clone and go to the directory of this script.
-2. Edit the user-data.example to how you want to setup your ubuntu.
+2. Edit the user-data.example to how you want ubuntu setup.
 2. Move the ubuntu server iso to this directory.
 3. Use the command below to make a new autoinstall iso that you can boot into that will install ubuntu, makes your users, and then perform updates for you.
 ```
