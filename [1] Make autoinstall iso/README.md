@@ -1,6 +1,6 @@
 # Make ubuntu 20.04 server ISO image with this autoinstall script I got from [Here](https://github.com/covertsh/ubuntu-autoinstall-generator)
-I used this script that i found and changed the user-data.example file to what I want the autoinstall to include.
-To set it up I recommend downloading the ubuntu-20.04.05-live-server-amd64.iso yourself from a local mirror.
+I used this script that I found to make an autoinstall iso that sets up my VM's for my cluster.
+Before starting I recommend downloading the ubuntu-20.04.05-live-server-amd64.iso yourself from a local mirror.
 1. Clone and go to the directory of this script.
 2. Edit the user-data.example to how you want to setup your ubuntu.
 2. Move the ubuntu server iso to this directory.
