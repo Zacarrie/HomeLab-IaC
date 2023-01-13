@@ -1,2 +1,0 @@
-- name: Install Collection Requirements
-  ansible.builtin.command: ansible-galaxy collection install -r ./collections/requirements.yml
