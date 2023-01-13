@@ -1,7 +1,9 @@
 # Make ubuntu 20.04 server ISO image with this autoinstall script I got from [Here](https://github.com/covertsh/ubuntu-autoinstall-generator)
 I used this script that i found and changed the user-data.example file to what I want the autoinstall to include.
 To set it up I recommend downloading the ubuntu-20.04.05-live-server-amd64.iso yourself from a local mirror.
-then clone and do to the directory of this script and move the iso to this directory and use this command to make a new autoinstall iso that you can boot into and installs ubuntu makes your users and then updates for you.
+1. Clone and go to the directory of this script
+2. Move the iso to this directory
+3. Use the command below to make a new autoinstall iso that you can boot into that will install ubuntu, makes your users, and then perform updates for you.
 ```
 bash ubuntu-autoinstall-generator.sh -a -u user-data.example -r -d ubuntu-autoinstall.iso
 ```
