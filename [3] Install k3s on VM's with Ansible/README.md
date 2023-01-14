@@ -1,5 +1,58 @@
-# Install k3s on VM's with Ansible
-# Automated build of HA k3s Cluster with `kube-vip` and MetalLB
+# Install k3s on VM's with Ansible 
+This folder is how you install k3s on your nodes that you have setup. I did not make this I actually got this from [techno-tim's github](https://github.com/techno-tim/k3s-ansible) after watching his [YouTube video](https://www.youtube.com/watch?v=CbkEWcUZ7zM) on how to install k3s with ansible.
+## After you have setup ansible on the host machine and installed ansible pull on the cluster these are the next steps
+
+### Change Varibles in inventory folder
+The first steps is to change the settings of your cluster install with the files in the Inventory folder. There is a sample folder in the directory that you can copy over to the my-cluster folder then change the settings to work with your setup. To copy the sample folder over you can run this command.
+```
+cp -R inventory/sample inventory/my-cluster
+```
+In the ```inventory/my-cluster/group_vars/all.yml``` file this are the varibles that you are going to want to change to work in your setup.
+```
+ansible_user: ansibleuser //change to a user on your cluster
+
+system_timezone: "Your/Timezone" //change this to your timezone
+
+flannel_iface: "eth0" //change this to your network interface find with 'ip address' command
+
+apiserver_endpoint: "192.168.30.222" //change this to a ip you want your kubernetes api address as
+
+k3s_token: "some-SUPER-DEDEUPER-secret-password" //change this to a secret token for your cluster
+
+metal_lb_ip_range: "192.168.30.80-192.168.30.90" //change this to a ip range you want your services in your cluster exposed on.
+```
+Then in the ```inventory/my-cluster/host.ini``` file this is where you want to add your ip addresses of your nodes and make sure to put the right addresses under the bracketed roles. for example.
+```
+[master]
+192.168.30.38
+192.168.30.39
+192.168.30.40
+
+[node]
+192.168.30.41
+192.168.30.42
+
+[k3s_cluster:children]
+master
+node
+```
+
+### After inventory folder is done you are set to install the cluster on the nodes
+On your host machine while you are in this folder run this command and ansible will install k3s, kube-vip, and MetalLB on your cluster.
+```
+ansible-playbook site.yml -i inventory/my-cluster/hosts.ini
+```
+
+
+
+
+
+
+
+
+
+
+# Automated build of HA k3s Cluster with `kube-vip` and MetalLB (ORIGINAL README)
 
 ![Fully Automated K3S etcd High Availability Install](https://img.youtube.com/vi/CbkEWcUZ7zM/0.jpg)
 
