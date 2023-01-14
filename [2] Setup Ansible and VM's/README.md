@@ -13,3 +13,7 @@ sudo apt upgrade
 ```
 sudo apt install ansible
 ```
+#### Install requirments needed for ansible
+```
+ansible-galaxy collection install -r ./collections/requirements.yml
+```
