@@ -2,7 +2,7 @@
 
 # Setting up FluxCD
 ## This is the steps for getting FluxCD up and running on the k3s cluster we just deployed
-### You can find more inforomation about deploying flux from Technotim's documentation [here](https://technotim.live/posts/flux-devops-gitops/), his youtube video [here](https://youtu.be/PFLimPh5-wo?si=cGkVMkltf0NTvVuZ), FluxCD getting started page [here](https://fluxcd.io/flux/get-started/), and FluxCD example deployment repo [here](https://github.com/fluxcd/flux2-kustomize-helm-example).
+### You can find more inforomation about deploying flux from [Technotim's documentation](https://technotim.live/posts/flux-devops-gitops/), [Technotim's youtube video](https://youtu.be/PFLimPh5-wo?si=cGkVMkltf0NTvVuZ), [FluxCD getting started page](https://fluxcd.io/flux/get-started/), and [FluxCD example deployment repo](https://github.com/fluxcd/flux2-kustomize-helm-example).
 
 ## First step - Installing Flux cli to host machine
 ### First thing we need to do is install flux to the host machine and you can do that by running this command
