@@ -26,9 +26,9 @@ k3s_token: "some-SUPER-DEDEUPER-secret-password" //change this to a secret token
 
 metal_lb_ip_range: "192.168.30.80-192.168.30.90" //change this to a ip range you want your services in your cluster exposed on.
 ```
-Then in the ```3.k3s/inventory/my-cluster/host.ini``` file this is where you want to add your ip addresses of your nodes and make sure to put the right addresses under the bracketed roles. for example.
+Then in the ```3.k3s/inventory/my-cluster/hosts.ini``` file this is where you want to add your ip addresses of your nodes and make sure to put the right addresses under the bracketed roles. for example.
 ```
-nano 3.k3s/inventory/my-cluster/host.ini
+nano 3.k3s/inventory/my-cluster/hosts.ini
 ```
 ```
 [master]
