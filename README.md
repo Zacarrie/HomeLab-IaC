@@ -12,3 +12,12 @@ cd HomeLab-k3s-gitops
 ```
 ### After you are in the root of the cloned repo all commands posted can be ran from this directory
 ### All the steps have their own readme in their directories
+
+## First step 
+### Firest step is setting up VM's or baremetal cluster machines you can set these up how ever you like but i will be running my cluster on ubuntu server vm's and you can find how to make auto isntall iso's for easy deployment [here](https://github.com/Zacarrie/HomeLab-k3s-gitops/tree/main/autoinstall_iso)
+
+## Second step
+### Second step is setting up ansible on your machine you are wanting to deploy kubernetes from not the machine you are wanting kubernetes installed to and you can find the setup [here](https://github.com/Zacarrie/HomeLab-k3s-gitops/tree/main/ansible)
+
+## Third step
+### The third step is deploying k3s to the vm's or machines you are wanting to duploy kubernetes onto and you can find the steps [here](https://github.com/Zacarrie/HomeLab-k3s-gitops/tree/main/k3s)
