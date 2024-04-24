@@ -32,7 +32,7 @@ nano 3.k3s/inventory/my-cluster/hosts.ini
 ```
 ```
 [master]
-192.168.30.38
+192.168.30.38 ansible_ssh_user= ansible_usernmame ansible_ssh_pass=ansible_password
 192.168.30.39
 192.168.30.40
 
