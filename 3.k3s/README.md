@@ -32,7 +32,7 @@ nano 3.k3s/inventory/my-cluster/hosts.ini
 ```
 ```
 [master]
-192.168.30.38 ansible_ssh_user= ansible_usernmame ansible_ssh_pass=ansible_password
+192.168.30.38 ansible_ssh_user=ansible_usernmame ansible_ssh_pass=ansible_password
 192.168.30.39
 192.168.30.40
 
@@ -48,7 +48,7 @@ node
 ### After inventory folder is done you are set to install the cluster on the nodes
 On your host machine while you are in this folder run this command and ansible will install k3s, kube-vip, and MetalLB on your cluster.
 ```
-ansible-playbook ./3.k3s/site.yml -i ./3.k3s/inventory/my-cluster/hosts.ini
+ansible-playbook 3.k3s/site.yml -i 3.k3s/inventory/my-cluster/hosts.ini
 ```
 
 ### How to control your kubernetes cluster from your host machine
@@ -73,7 +73,10 @@ NAME           STATUS   ROLES                  AGE   VERSION
 kubernetesvm   Ready    control-plane,master   14m   v1.29.2+k3s1
 ```
 
-
+### How to remove k3s from the cluster
+```
+ansible-playbook 3.k3s/reset.yml -i 3.k3s/inventory/my-cluster/hosts.ini
+```
 
 
 
