@@ -1,6 +1,6 @@
 # Install k3s on VM's with Ansible 
 This folder is how you install k3s on your nodes that you have setup. I did not make this I actually got this from [techno-tim's github](https://github.com/techno-tim/k3s-ansible) after watching his [YouTube video](https://www.youtube.com/watch?v=CbkEWcUZ7zM) on how to install k3s with ansible.
-## After you have setup ansible on the host machine and installed ansible pull on the cluster these are the next steps
+## After you have setup ansible on the host machine these are the next steps
 
 ### Change Varibles in inventory folder
 The first steps is to change the settings of your cluster install with the files in the Inventory folder. There is a sample folder in the directory that you can copy over to the my-cluster folder then change the settings to work with your setup. To copy the sample folder over you can run this command.
