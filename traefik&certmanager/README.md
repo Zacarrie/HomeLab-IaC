@@ -39,7 +39,7 @@ kubectl get namespaces
 ```
 ### next we have to edit the ```values.yaml``` for traefik 
 ```
-nano 4.traefik+CertManager/traefik/values.yaml
+nano traefik&certmanager/traefik/values.yaml
 ```
 #### options in the ```values.yaml``` you can change
 ```
@@ -47,7 +47,7 @@ loadBalancerIP: 192.168.30.80 //should be changed to a ip in the range you set f
 ```
 ### Next we can install traefik
 ```
-helm install --namespace=traefik traefik traefik/traefik --values=4.traefik+CertManager/traefik/values.yaml
+helm install --namespace=traefik traefik traefik/traefik --values=traefik&certmanager/traefik/values.yaml
 ```
 ### next we can see if traefik was deployed and if a external ip was given to the traefik service
 ```
@@ -55,7 +55,7 @@ kubectl get svc --all-namespaces -o wide
 ```
 ### next we need to install the default headers middleware for traefik 
 ```
-kubectl apply -f 4.traefik+CertManager/traefik/default-headers.yaml
+kubectl apply -f traefik&certmanager/traefik/default-headers.yaml
 ```
 #### to verify if middleware was applied to the cluster
 ```
@@ -81,7 +81,7 @@ htpasswd -nb username password | openssl base64
 ```
 ### once you get your token copy and paste into a safe space. then next we would need to place this token into the ```secret-dashboard.yaml```
 ```
-nano 4.traefik+CertManager/traefik/dashboard/secret-dashboard.yaml
+nano traefik&certmanager/traefik/dashboard/secret-dashboard.yaml
 ```
 ```
 data:
@@ -89,7 +89,7 @@ data:
 ```
 ### after the token is pasted and saved into the yaml we can send this secret to the cluster
 ```
-kubectl apply -f 4.traefik+CertManager/traefik/dashboard/secret-dashboard.yaml
+kubectl apply -f traefik&certmanager/traefik/dashboard/secret-dashboard.yaml
 ```
 #### and to verify the secret was applied to the cluster
 ```
@@ -97,13 +97,13 @@ kubectl get secrets --namespace traefik
 ```
 ### next we need to deploy the middleware that will be the auth into accessing the traefik dashboard to the cluster
 ```
-kubectl apply -f 4.traefik+CertManager/traefik/dashboard/middleware.yaml
+kubectl apply -f traefik&certmanager/traefik/dashboard/middleware.yaml
 ```
 
 ## deploying traefik dashboard ingress
 ### Now to deploy the traefik dashboard ingress we need to setup a dns name and point it to the correct ip address. If you have a domain name and for this example it would be zacarrie.com since that is the domain i have. We need to go to the ```ingress.yaml``` file and change the hostname to a domain you would like to use.
 ```
-nano 4.traefik+CertManager/traefik/dashboard/ingress.yaml
+nano traefik&certmanager/traefik/dashboard/ingress.yaml
 ```
 This is what the host should look like by default in ```ingress.yaml```
 ```
@@ -135,7 +135,7 @@ service:
 ```
 ### now we can apply the ingress setting for traefik
 ```
-kubectl apply -f 4.traefik+CertManager/traefik/dashboard/ingress.yaml
+kubectl apply -f traefik&certmanager/traefik/dashboard/ingress.yaml
 ```
 ### now if in a browser i go to traefik.local.zacarrie.com it should prompt me for the username and password i set in ```htpasswd -nb username password | openssl base64``` and takes me to the traefik dashboard.
 

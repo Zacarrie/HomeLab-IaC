@@ -5,11 +5,11 @@ This folder is how you install k3s on your nodes that you have setup. I did not 
 ### Change Varibles in inventory folder
 The first steps is to change the settings of your cluster install with the files in the Inventory folder. There is a sample folder in the directory that you can copy over to the my-cluster folder then change the settings to work with your setup. To copy the sample folder over you can run this command.
 ```
-cp -R 3.k3s/inventory/sample 3.k3s/inventory/my-cluster
+cp -R k3s/inventory/sample k3s/inventory/my-cluster
 ```
-In the ```3.k3s/inventory/my-cluster/group_vars/all.yml``` file this are the varibles that you are going to want to change to work in your setup.
+In the ```k3s/inventory/my-cluster/group_vars/all.yml``` file this are the varibles that you are going to want to change to work in your setup.
 ```
-nano 3.k3s/inventory/my-cluster/group_vars/all.yml
+nano k3s/inventory/my-cluster/group_vars/all.yml
 ```
 ```
 ansible_user: ansibleuser //change to a user on your cluster
@@ -26,9 +26,9 @@ k3s_token: "some-SUPER-DEDEUPER-secret-password" //change this to a secret token
 
 metal_lb_ip_range: "192.168.30.80-192.168.30.90" //change this to a ip range you want your services in your cluster exposed on.
 ```
-Then in the ```3.k3s/inventory/my-cluster/hosts.ini``` file this is where you want to add your ip addresses of your nodes and make sure to put the right addresses under the bracketed roles. for example.
+Then in the ```k3s/inventory/my-cluster/hosts.ini``` file this is where you want to add your ip addresses of your nodes and make sure to put the right addresses under the bracketed roles. for example.
 ```
-nano 3.k3s/inventory/my-cluster/hosts.ini
+nano k3s/inventory/my-cluster/hosts.ini
 ```
 ```
 [master]
@@ -48,7 +48,7 @@ node
 ### After inventory folder is done you are set to install the cluster on the nodes
 On your host machine while you are in this folder run this command and ansible will install k3s, kube-vip, and MetalLB on your cluster.
 ```
-ansible-playbook 3.k3s/site.yml -i 3.k3s/inventory/my-cluster/hosts.ini
+ansible-playbook k3s/site.yml -i k3s/inventory/my-cluster/hosts.ini
 ```
 
 ### How to control your kubernetes cluster from your host machine
@@ -75,7 +75,7 @@ kubernetesvm   Ready    control-plane,master   14m   v1.29.2+k3s1
 
 ### How to remove k3s from the cluster
 ```
-ansible-playbook 3.k3s/reset.yml -i 3.k3s/inventory/my-cluster/hosts.ini
+ansible-playbook k3s/reset.yml -i k3s/inventory/my-cluster/hosts.ini
 ```
 
 

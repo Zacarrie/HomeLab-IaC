@@ -6,7 +6,7 @@ Before starting I recommend downloading the ubuntu-20.04.05-live-server-amd64.is
 2. Move the ubuntu server iso to this directory.
 3. Use the command below to make a new autoinstall iso that you can boot into that will install ubuntu, makes your users, and then perform updates for you.
 ```
-bash 1.autoinstall_iso/ubuntu-autoinstall-generator.sh -a -u 1.autoinstall_iso/user-data.example -r -d 1.autoinstall_iso/ubuntu-autoinstall.iso
+bash autoinstall_iso/ubuntu-autoinstall-generator.sh -a -u autoinstall_iso/user-data.example -r -d autoinstall_iso/ubuntu-autoinstall.iso
 ```
 
 
