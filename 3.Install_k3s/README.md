@@ -5,7 +5,7 @@ This folder is how you install k3s on your nodes that you have setup. I did not 
 ### Change Varibles in inventory folder
 The first steps is to change the settings of your cluster install with the files in the Inventory folder. There is a sample folder in the directory that you can copy over to the my-cluster folder then change the settings to work with your setup. To copy the sample folder over you can run this command.
 ```
-cp -R inventory/sample inventory/my-cluster
+cp -R 3.install_k3s/inventory/sample 3.install_k3s/inventory/my-cluster
 ```
 In the ```inventory/my-cluster/group_vars/all.yml``` file this are the varibles that you are going to want to change to work in your setup.
 ```
@@ -42,7 +42,7 @@ node
 ### After inventory folder is done you are set to install the cluster on the nodes
 On your host machine while you are in this folder run this command and ansible will install k3s, kube-vip, and MetalLB on your cluster.
 ```
-ansible-playbook site.yml -i inventory/my-cluster/hosts.ini
+ansible-playbook 3.install_k3s/site.yml -i 3.install_k3s/inventory/my-cluster/hosts.ini
 ```
 
 ### How to control your kubernetes cluster from your host machine

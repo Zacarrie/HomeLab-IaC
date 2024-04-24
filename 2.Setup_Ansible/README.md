@@ -15,5 +15,5 @@ sudo apt install ansible
 ```
 #### Install requirments needed for ansible
 ```
-ansible-galaxy collection install -r ./collections/requirements.yml
+ansible-galaxy collection install -r ./2.Setup_Ansible/collections/requirements.yml
 ```
