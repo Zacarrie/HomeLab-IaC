@@ -11,6 +11,8 @@ In the ```inventory/my-cluster/group_vars/all.yml``` file this are the varibles 
 ```
 ansible_user: ansibleuser //change to a user on your cluster
 
+ansible_become_password: ansibleuser_password //optional to auto type password to connect to cluster nodes
+
 system_timezone: "Your/Timezone" //change this to your timezone
 
 flannel_iface: "eth0" //change this to your network interface find with 'ip address' command
