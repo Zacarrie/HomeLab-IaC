@@ -43,9 +43,27 @@ On your host machine while you are in this folder run this command and ansible w
 ansible-playbook site.yml -i inventory/my-cluster/hosts.ini
 ```
 
-
-
-
+### How to control your kubernetes cluster from your host machine
+First make a file on the host machine to copy the config over to
+```
+mkdir ~/.kube
+```
+```
+touch ~/.kube/config
+```
+To copy your `kube config` locally so that you can access your **Kubernetes** cluster run:
+```
+scp {ansible_user}@{ip-of-a-master-node}:~/.kube/config ~/.kube/config
+```
+To see if you are able to control your cluster run this command to get a list of your nodes
+```
+kubectl get nodes
+```
+you should get a output similar to
+```
+NAME           STATUS   ROLES                  AGE   VERSION
+kubernetesvm   Ready    control-plane,master   14m   v1.29.2+k3s1
+```
 
 
 
