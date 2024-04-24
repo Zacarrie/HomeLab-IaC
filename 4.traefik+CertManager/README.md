@@ -137,7 +137,7 @@ service:
 ```
 kubectl apply -f 4.traefik+CertManager/traefik/dashboard/ingress.yaml
 ```
-### now if in a browser i go to traefik.local.zacarrie.com it should prompt me for the username and password i set in ```htpasswd -nb username password | openssl base64``` and take me to the traefik dashboard.
+### now if in a browser i go to traefik.local.zacarrie.com it should prompt me for the username and password i set in ```htpasswd -nb username password | openssl base64``` and takes me to the traefik dashboard.
 
 ## Installing Cert Manager
 ### First we need to add the helm repo for cert manager to kubernetes
@@ -150,4 +150,8 @@ helm repo update
 ### then we need to creat the namespace for cert manager
 ```
 kubectl create namespace cert-manager
+```
+#### to verify if the name space was created
+```
+kubectl get namespaces
 ```
