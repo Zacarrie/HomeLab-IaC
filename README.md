@@ -21,3 +21,6 @@ cd HomeLab-k3s-gitops
 
 ## Third step - Deploying k3s
 ### The third step is deploying k3s to the vm's or machines you are wanting to duploy kubernetes onto and you can find the steps [here](https://github.com/Zacarrie/HomeLab-k3s-gitops/tree/main/k3s)
+
+## Fourth step - Deploying FluxCD to k3s cluster
+### The fourth step is installing FluxCD and deploying it to the k3s cluster and editing the repo structre to have it to where you can deploy services directly from your github repo [here](https://github.com/Zacarrie/HomeLab-k3s-gitops/tree/main/fluxcd)
