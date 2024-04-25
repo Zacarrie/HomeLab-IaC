@@ -56,7 +56,7 @@ cp -a fluxcd {name-of-flux-repo}
 ### so for my example the command i would run is ```cp -a fluxcd flux``` after the files are copied over we need to commit the changes to the repo so that flux knows the new layout
 ### before we can push the changes we have to cd into the directory of the flux repo
 ```
-cd flux
+cd {name-of-flux-repo}
 ```
 ### now we can add all of the new files to the commit
 ```
