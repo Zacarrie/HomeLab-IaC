@@ -77,7 +77,7 @@ kubernetesvm   Ready    control-plane,master   14m   v1.29.2+k3s1
 ```
 ansible-playbook k3s/reset.yml -i k3s/inventory/my-cluster/hosts.ini
 ```
-
+## After you have deployed your k3s you are ready for the next step of getting flux running for gitops on your cluster [here](https://github.com/Zacarrie/HomeLab-k3s-gitops/tree/main/fluxcd)
 
 
 

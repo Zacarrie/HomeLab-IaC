@@ -36,8 +36,41 @@ flux bootstrap github \
             ├── gotk-sync.yaml
             └── kustomization.yaml
 ```
-## Fourth step - Edit structure of flux repo
-### once the repo is created I like to copy the files from this repo directory to the newely created repo from flux. And the new directory should look like this
+## Fourth step - Clone flux repo to host computer
+### once the repo is created we would need to clone the repo to the root folder of this repo we are working with. Since its a private repo we have to change the git clone command to have the new repo cloned. We need to add ```{github-api-token}@``` before github.com in the git clone command. replacing ```{github-api-token}``` 
+### so for my example it would go from this
+```
+git clone https://github.com/Zacarrie/flux.git
+```
+### to this
+```
+git clone https://{github-api-token}@github.com/Zacarrie/flux.git
+```
+### now if i ```ls``` i should see a ```flux``` folder listed
+
+## Fifth step - Edit structure of the new repo
+### I like to setup the new repo to something simillar in the FluxCD example repo you can find [here](https://github.com/fluxcd/flux2-kustomize-helm-example/tree/main). I already have the folder structure I like to use here in this repo and we can go ahead and copy it over with these commands.
+```
+cp -a fluxcd {name-of-flux-repo}
+```
+### so for my example the command i would run is ```cp -a fluxcd flux``` after the files are copied over we need to commit the changes to the repo so that flux knows the new layout
+### before we can push the changes we have to cd into the directory of the flux repo
+```
+cd flux
+```
+### now we can add all of the new files to the commit
+```
+git add .
+```
+### commit the changes with a message. It might ask you to setup your git config user.email & user.name. It will show you how to set that up and afterwords you can run this command again
+```
+git commit -m "Change repo structure from guide"
+```
+### push the changes to the main branch
+```
+git push origin main
+```
+### after that the repo should be setup and the new structure of your repo should look like this
 ```
 ├── apps
 ├── infrastructure
@@ -52,4 +85,5 @@ flux bootstrap github \
         ├── apps.yaml
         └── infrastructure.yaml
 ```
-### once these files are copied over to the new repo when we need to deploy an workload and needs some additional setup Flux will follow this paths of folders when deploying ```infrastructure/config``` > ```infrastructure/controllers``` > ```apps``` 
+### once your flux repo looks like this when we need to deploy an workload that needs some additional setup Flux will follow this order of operations of folders when deploying ```infrastructure/config``` > ```infrastructure/controllers``` > ```apps``` 
+### so now when you want to deploy an app that needs a helm chart repo and namespace you can put that in the ```infrastructure/config``` and it will deploy them before your manifest in the apps folder. In the apps folder i like to seperate the apps into their own namespace folders
