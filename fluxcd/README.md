@@ -36,6 +36,7 @@ flux bootstrap github \
             ├── gotk-sync.yaml
             └── kustomization.yaml
 ```
+## Fourth step - Edit structure of flux repo
 ### once the repo is created I like to copy the files from this repo directory to the newely created repo from flux. And the new directory should look like this
 ```
 ├── apps
