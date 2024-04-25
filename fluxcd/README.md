@@ -51,7 +51,7 @@ git clone https://{github-api-token}@github.com/Zacarrie/flux.git
 ## Fifth step - Edit structure of the new repo
 ### I like to setup the new repo to something simillar in the FluxCD example repo you can find [here](https://github.com/fluxcd/flux2-kustomize-helm-example/tree/main). I already have the folder structure I like to use here in this repo and we can go ahead and copy it over with these commands.
 ```
-cp -a fluxcd {name-of-flux-repo}
+cp -a fluxcd/. {name-of-flux-repo}
 ```
 ### so for my example the command i would run is ```cp -a fluxcd flux``` after the files are copied over we need to commit the changes to the repo so that flux knows the new layout
 ### before we can push the changes we have to cd into the directory of the flux repo
