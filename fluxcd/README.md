@@ -70,6 +70,10 @@ git commit -m "Change repo structure from guide"
 ```
 git push origin main
 ```
+### Then go back to the original directory
+```
+cd ..
+```
 ### after that the repo should be setup and the new structure of your repo should look like this
 ```
 ├── apps
